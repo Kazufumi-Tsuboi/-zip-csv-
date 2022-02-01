@@ -22,11 +22,6 @@ df_sesndaiStation = ...の部分で、読み込むメッシュ番号を指定し
 
 
 list = glob.glob('C:/Users/ryo itoh/Desktop/DIM new/unzip/1000/*00000.csv')
-
-#df_Koku_Series = pd.DataFrame(columns=['date','time','area','residence','age','gender','population'])
-#df_Kyodai_Series = pd.DataFrame(columns=['date','time','area','residence','age','gender','population'])
-#df_Todai_Series = pd.DataFrame(columns=['date','time','area','residence','age','gender','population'])
-#df_Kawauchi_Series = pd.DataFrame(columns=['date','time','area','residence','age','gender','population'])
 df_SendaiStation_Series = pd.DataFrame(columns=['date','time','area','residence','age','gender','population'])
 
 #del df
@@ -39,12 +34,6 @@ for file in list:
     df_SendaiStation_Series = df_SendaiStation_Series.append(df_SendaiStation)
     print(file)
 
-    
-#df_Koku_Series.sort_values('date')
-#print(df_Koku_Series)
-#df_Todai_Series.sort_values('date')
-#print(df_Todai_Series)
-#df_Koku_Series.sort_values('date')
 #dataの型を数値列から日付に変更しています。
 df_SendaiStation_Series['date'] = pd.to_datetime(df_SendaiStation_Series['date'].astype(str))
 df_SendaiStation_Series.sort_values('date')
